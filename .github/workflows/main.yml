@@ -1,4 +1,7 @@
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 name: Linux_Container_Workflow
 
 jobs:
@@ -21,5 +24,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:${{ github.sha }}
-        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:${{ github.sha }}
+        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app
