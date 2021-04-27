@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: node-app-deployment
+  template:
+    metadata:
+      labels:
+        app: node-app-deployment
+    spec:
+      containers:
+        - name: node-app-image
+          image: omslinx.azurecr.io/oms/node-web-app
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: node-app-pvc
+      restartPolicy: Always
+      volumes:
+        - name: node-app-pvc
+          persistentVolumeClaim:
+            claimName: node-app-pvc
