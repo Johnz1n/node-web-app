@@ -2,7 +2,7 @@ on: [push]
 name: Linux_Container_Workflow
 
 jobs:
-  build-and-deploy:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
@@ -21,5 +21,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app
-        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app
+        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:${{ github.sha }}
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:${{ github.sha }}
