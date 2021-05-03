@@ -27,7 +27,7 @@ jobs:
       with:
         namespace: 'node-app'
         manifests: |
-            deployment.yaml
-            service.yaml
+            kubernetes/node-deployment.yaml
+            kubernetes/services.yaml
         images: 'omslinx.azurecr.io/oms/node-web-app:${{ github.sha }}'
         kubectl-version: 'latest'
