@@ -6,10 +6,6 @@ metadata:
   annotations:
     fluxcd.io/automated: "true"
 spec:
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
   selector:
     matchLabels:
       app: node-app-deployment
@@ -20,8 +16,7 @@ spec:
     spec:
       containers:
         - name: node-app-image
-          image: omslinx.azurecr.io/oms/node-web-app:tag
-          imagePullPolicy: Always
+          image: omslinx.azurecr.io/oms/node-web-app
           resources:
             limits:
               memory: "256Mi"
