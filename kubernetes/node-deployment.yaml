@@ -5,6 +5,7 @@ metadata:
   namespace: node-app
   annotations:
     fluxcd.io/automated: "true"
+    fluxcd.io/tag.node-app-image: glob:v*
 spec:
   selector:
     matchLabels:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: node-app-image
-          image: omslinx.azurecr.io/oms/node-web-app:latest
+          image: "omslinx.azurecr.io/oms/node-web-app:v1"
           imagePullPolicy: Always
           resources:
             limits:
