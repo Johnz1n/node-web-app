@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-app-image
-          image: omslinx.azurecr.io/oms/node-web-app:v2
+          image: omslinx.azurecr.io/oms/node-web-app:tag
           imagePullPolicy: Always
           resources:
             limits:

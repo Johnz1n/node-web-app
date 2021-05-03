@@ -21,5 +21,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:v2
-        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:v2
+        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:${{ github.sha }}
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:${{ github.sha }}
