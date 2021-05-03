@@ -17,6 +17,7 @@ spec:
       containers:
         - name: node-app-image
           image: omslinx.azurecr.io/oms/node-web-app:latest
+          imagePullPolicy: Always
           resources:
             limits:
               memory: "256Mi"
@@ -26,7 +27,6 @@ spec:
           volumeMounts:
             - mountPath: /var/www/html
               name: node-app-pvc
-      restartPolicy: Always
       volumes:
         - name: node-app-pvc
           persistentVolumeClaim:
