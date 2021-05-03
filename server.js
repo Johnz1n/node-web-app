@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World - Test deploy fluxctl v1 xD');
+  res.send('Hello World - Test deploy fluxctl image pull policy');
 });
 
 app.listen(PORT, HOST);
