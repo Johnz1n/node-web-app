@@ -31,7 +31,7 @@ jobs:
         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/oms/node-web-app:${{ github.sha }}
 
     - name: 'Deploy'    
-    - uses: Azure/k8s-deploy@v1.4
+      uses: Azure/k8s-deploy@v1.4
       with:
         namespace: 'node-app'
         manifests: |
