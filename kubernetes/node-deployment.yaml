@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: node-app-image
-          image: "omslinx.azurecr.io/oms/node-web-app:v1"
-          imagePullPolicy: IfNotPresent
+          image: "omslinx.azurecr.io/oms/node-web-app:*"
+          imagePullPolicy: Always
           resources:
             limits:
               memory: "256Mi"
