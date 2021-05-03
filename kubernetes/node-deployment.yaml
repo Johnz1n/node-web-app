@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-app-image
-          image: omslinx.azurecr.io/oms/node-web-app
+          image: omslinx.azurecr.io/oms/node-web-app:latest
           resources:
             limits:
               memory: "256Mi"
