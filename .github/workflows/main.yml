@@ -37,4 +37,5 @@ jobs:
         manifests: |
             kubernetes/node-deployment.yaml
             kubernetes/services.yaml
+            kubernetes/node-pvc.yaml
         images: 'omslinx.azurecr.io/oms/node-web-app:${{ github.sha }}'
